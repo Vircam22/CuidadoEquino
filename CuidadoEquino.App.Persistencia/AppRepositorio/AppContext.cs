@@ -12,7 +12,7 @@
         public DbSet<HistoriaClinica> HistoriasClinicas {get; set;}
 
     }
-    protected override void OnConfiguring (DbContextOptionsBuilder optionsBuilder)
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if(!optionsBuilder.IsConfigured)
         {

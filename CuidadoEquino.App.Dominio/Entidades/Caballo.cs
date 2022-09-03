@@ -1,3 +1,4 @@
+using System;
 namespace CuidadoEquino.App.Dominio;
 
 public class Caballo

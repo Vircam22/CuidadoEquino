@@ -1,0 +1,5 @@
+C:\CuidadoEquino\CuidadoEquino.App\CuidadoEquino.App.Consola\obj\Debug\net6.0\CuidadoEquino.App.Consola.csproj.AssemblyReference.cache
+C:\CuidadoEquino\CuidadoEquino.App\CuidadoEquino.App.Consola\obj\Debug\net6.0\CuidadoEquino.App.Consola.GeneratedMSBuildEditorConfig.editorconfig
+C:\CuidadoEquino\CuidadoEquino.App\CuidadoEquino.App.Consola\obj\Debug\net6.0\CuidadoEquino.App.Consola.AssemblyInfoInputs.cache
+C:\CuidadoEquino\CuidadoEquino.App\CuidadoEquino.App.Consola\obj\Debug\net6.0\CuidadoEquino.App.Consola.AssemblyInfo.cs
+C:\CuidadoEquino\CuidadoEquino.App\CuidadoEquino.App.Consola\obj\Debug\net6.0\CuidadoEquino.App.Consola.csproj.CoreCompileInputs.cache
