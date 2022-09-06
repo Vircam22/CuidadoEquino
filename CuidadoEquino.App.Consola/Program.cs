@@ -1,5 +1,6 @@
 ﻿using System;
 using CuidadoEquino.App.Dominio;
+using CuidadoEquino.App.Persistencia;
 
 namespace CuidadoEquino.App.Consola
 {
@@ -8,6 +9,11 @@ namespace CuidadoEquino.App.Consola
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World");
+
+            using (var context : new Persistencia.AppContext())
+            {
+                
+            }
         }
     }
 }
