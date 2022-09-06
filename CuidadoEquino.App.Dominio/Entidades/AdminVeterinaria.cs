@@ -1,7 +1,9 @@
 using System;
-namespace CuidadoEquino.App.Dominio;
 
-public class AdminVeterinaria
+namespace CuidadoEquino.App.Dominio
 {
-    public string Nombre {get; set;}
+    public class AdminVeterinaria
+    {
+        public string Nombre {get; set;}
+    }
 }

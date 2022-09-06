@@ -1,8 +1,10 @@
 using System;
-namespace CuidadoEquino.App.Dominio;
 
-public class HistoriaClinica:IndicadoresdeSalud
+namespace CuidadoEquino.App.Dominio
 {
-    public int IdCaballo {get; set;}
-    public string FechaVisita {get; set;}
+    public class HistoriaClinica:IndicadoresdeSalud
+    {
+        public int IdCaballo {get; set;}
+        public string FechaVisita {get; set;}
+    }
 }
