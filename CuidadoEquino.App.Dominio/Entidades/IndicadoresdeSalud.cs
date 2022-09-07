@@ -5,7 +5,9 @@ namespace CuidadoEquino.App.Dominio
     public class IndicadoresdeSalud
     {
         public int Id {get; set;}
-        public int Id_veterinario {get; set;}
+        public int IdCaballo {get; set;}
+        public int IdVeterinario {get; set;}
+        public string IdPropietario {get; set;}
         public string Temperatura {get; set;}
         public int Peso {get; set;}
         public string Frecuencia_Respiratoria {get; set;}
