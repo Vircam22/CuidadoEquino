@@ -11,4 +11,8 @@ namespace CuidadoEquino.App.Persistencia
         void DeleteCaballo(int idCaballo);
         Caballo GetCaballo(int idCaballo);
     }  
-}
+
+ }
+
+
+

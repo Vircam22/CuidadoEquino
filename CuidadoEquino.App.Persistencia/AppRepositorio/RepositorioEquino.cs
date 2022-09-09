@@ -36,26 +36,26 @@ namespace CuidadoEquino.App.Persistencia
 
         Caballo IRepositorioEquino.GetCaballo(int idCaballo)
         {
-             return _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == idCaballo);
+            return _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == idCaballo);
         }
 
         Caballo IRepositorioEquino.UpdateCaballo(Caballo caballo)
         {
-             var caballoEncontrado = _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == caballo.Id);
-             if (caballoEncontrado!=null)
-             {
-                caballoEncontrado.Nombre=caballo.Nombre;
-                caballoEncontrado.Color=caballo.Color;
-                caballoEncontrado.Especie=caballo.Especie;
-                caballoEncontrado.Raza=caballo.Raza;
-                caballoEncontrado.Propietario=caballo.Propietario;
-                caballoEncontrado.Veterinario=caballo.Veterinario;
-                caballoEncontrado.HistoriaClinica=caballo.HistoriaClinica;
+            var caballoEncontrado = _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == caballo.Id);
+            if (caballoEncontrado != null)
+            {
+                caballoEncontrado.Nombre = caballo.Nombre;
+                caballoEncontrado.Color = caballo.Color;
+                caballoEncontrado.Especie = caballo.Especie;
+                caballoEncontrado.Raza = caballo.Raza;
+                caballoEncontrado.Propietario = caballo.Propietario;
+                caballoEncontrado.Veterinario = caballo.Veterinario;
+                caballoEncontrado.HistoriaClinica = caballo.HistoriaClinica;
 
                 _appContext.SaveChanges();
-                
-             }
-             return caballoEncontrado; 
+
+            }
+            return caballoEncontrado;
         }
     }
 }
