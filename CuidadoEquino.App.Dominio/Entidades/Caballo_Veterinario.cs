@@ -10,3 +10,4 @@ namespace CuidadoEquino.App.Dominio
         public int Id_Caballo {get; set;}
 
     }
+}
