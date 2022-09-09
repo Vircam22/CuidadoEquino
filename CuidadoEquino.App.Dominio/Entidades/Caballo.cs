@@ -4,7 +4,7 @@ namespace CuidadoEquino.App.Dominio
 {
     public class Caballo
     {
-        public int IdCaballo {get; set;}
+        public int Id {get; set;}
         public string Nombre { get; set; }
         public string Color { get; set; }
         public string Especie { get; set; }

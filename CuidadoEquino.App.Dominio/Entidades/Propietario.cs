@@ -9,6 +9,6 @@ namespace CuidadoEquino.App.Dominio
         public string Apellidos {get; set;}
         public string Dirección {get; set;}
         public string Teléfono {get; set;}
-        public string Correo {get; set;}
+        public string email {get; set;}
     }
 }
