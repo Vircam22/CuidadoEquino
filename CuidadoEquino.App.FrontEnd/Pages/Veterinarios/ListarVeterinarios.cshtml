@@ -1,0 +1,38 @@
+﻿@page
+@model CuidadoEquino.App.FrontEnd.Pages.ListarVeterinariosModel
+@{
+}
+
+<div>
+    <div>
+        <h3 class="display-10 d-inline">Veterinarios</h3>
+        <span class="d-inline float-end">
+            <a type="button" class="btn btn-success" href="#">Consultar</a>
+            <a type="button" class="btn btn-primary" asp-area="" asp-page="/Veterinarios/DetalleVeterinario">Registrar</a>
+        </span>
+    </div>
+    <div class="shadow mt-5 p-3 rounded">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th>Identificación</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Tarjeta Profesional</th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>326749905</td>
+                    <td>Alberto Gomez</td>
+                    <td>320 3823829</td>
+                    <td>AFG37283278</td>
+                    <td>
+                        <a type="button" class="btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

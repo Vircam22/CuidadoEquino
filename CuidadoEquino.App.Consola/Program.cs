@@ -6,22 +6,22 @@ namespace CuidadoEquino.App.Consola
 {
     class Program
     {
+
+        private static ICaballoRepositorio _caballoRepositorio;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-
-            using(var context = new Persistencia.AppContext())
-            {
-                var caballo = new Caballo()
+            Console.WriteLine("Hola");
+            _caballoRepositorio = new CaballoRepositorio();
+            var caballo = new Caballo()
                 {
-                    Nombre = "Rocky",
-                    Color = "Gris",
-                    Especie = "Pony",
-                    Raza = "Manso"
+                    Nombre = "Jorge",
+                    Color = "Blanco",
+                    Especie = "Brioso",
+                    Raza = "Brioso"
                 };
-                context.Caballos.Add(caballo);
-                context.SaveChanges();
-            }
+            _caballoRepositorio.Insertar(caballo);
+
         }
     }
 }

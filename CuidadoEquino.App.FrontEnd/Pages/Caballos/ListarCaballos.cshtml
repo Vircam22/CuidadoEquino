@@ -1,0 +1,38 @@
+﻿@page
+@model CuidadoEquino.App.FrontEnd.Pages.ListarCaballosModel
+@{
+}
+
+<div>
+    <div>
+        <h3 class="display-10 d-inline">Caballos</h3>
+        <span class="d-inline float-end">
+            <a type="button" class="btn btn-success" href="#">Consultar</a>
+            <a type="button" class="btn btn-primary" asp-area="" asp-page="/Caballos/DetalleCaballo">Registrar</a>
+        </span>
+    </div>
+    <div class="shadow mt-5 p-3 rounded">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th></th>
+                <th>Caballo</th>
+                <th>Propietario</th>
+                <th>Veterinario</th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="img_preview_caballo" src="~/images/caballo1.webp" /></td>
+                    <td>Alberto Gomez</td>
+                    <td>Maria Vargas</td>
+                    <td>
+                        <a type="button" class="btn btn-info"><i class="bi bi-credit-card-2-front"></i></a>
+                        <a type="button" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -16,9 +16,9 @@
             if(!optionsBuilder.IsConfigured)
             {
                 /* La siguiente instruccion es por el uso de SQL Server con Docker */
-                //optionsBuilder.UseSqlServer("Server=.; Database=CuidadoCaninoDB; User Id=sa; Password=Password123;");
+                optionsBuilder.UseSqlServer("Server=.; Database=CuidadoCaninoDB; User Id=sa; Password=Password123;");
                 
-                optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog=CuidadoCaninoDB");
+                //optionsBuilder.UseSqlServer("Data Source = (localdb)\\MSSQLLocalDB; Initial Catalog=CuidadoCaninoDB");
             }
         }
 

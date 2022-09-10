@@ -1,0 +1,64 @@
+﻿@page
+@model CuidadoEquino.App.FrontEnd.Pages.DetalleCaballoModel
+@{
+    ViewData["FormName"] = "Agregar Caballo";
+}
+
+<div>
+    <div>
+        <h3 class="display-10 d-inline">@ViewData["FormName"]</h3>
+    </div>
+    <div class="shadow mt-5 p-3 rounded">
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <a href="#" tabindex="-1" style="height:100%" class="btn btn-default disabled placeholder placeholder-lg col-12"
+                            aria-hidden="true"></a>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" id="nom_caballo" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <select class="form-select" id="color">
+                                    <option selected>Color</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="raza">
+                                    <option selected>Raza</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <select class="form-select" id="especie">
+                                    <option selected>Especie</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-5">
+                        <select class="form-select" id="propietario">
+                            <option selected>Propietario</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-5">
+                        <select class="form-select" id="veterinario">
+                            <option selected>Veterinario</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
