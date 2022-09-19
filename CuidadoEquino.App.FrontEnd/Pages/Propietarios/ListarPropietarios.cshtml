@@ -1,13 +1,15 @@
 ﻿@page
 @model CuidadoEquino.App.FrontEnd.Pages.ListarPropietariosModel
 @{
+    var title = "Lista de Propietarios";
+    ViewData["Title"] = title;
 }
 
 <div>
     <div>
         <h3 class="display-10 d-inline">Propietarios</h3>
         <span class="d-inline float-end">
-            <a type="button" class="btn btn-success" href="#">Consultar</a>
+            <!--<a type="button" class="btn btn-success" href="#">Consultar</a>-->
             <a type="button" class="btn btn-primary" asp-area="" asp-page="/Propietarios/DetallePropietario">Registrar</a>
         </span>
     </div>
