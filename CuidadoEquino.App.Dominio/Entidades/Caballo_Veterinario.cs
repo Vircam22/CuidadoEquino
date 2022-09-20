@@ -2,7 +2,7 @@ using System;
 
 namespace CuidadoEquino.App.Dominio
 {
-    public class Id_Caballo_Veterinario
+    public class Caballo_Veterinario
     {
         public int Id {get; set;}
         public int Id_Veteinario {get;set;}

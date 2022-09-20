@@ -5,21 +5,23 @@ using CuidadoEquino.App.Dominio;
 
 namespace CuidadoEquino.App.Persistencia
 {
-    public class RepositorioEquino : IRepositorioEquino
+    public class RepositorioCaballo : IRepositorioCaballo
     {
         private readonly AppContext _appContext;
 
-        public RepositorioEquino(AppContext appContext)
+        public RepositorioCaballo(AppContext appContext)
         {
             _appContext = appContext;
         }
-        Caballo IRepositorioEquino.AddCaballo(Caballo caballo)
+        
+        public Caballo AddCaballo(Caballo caballo)
         {
-            var caballoAdicionado = _appContext.Caballos.add(caballo);
+            var caballoAdicionado = _appContext.Caballos.Add(caballo);
             _appContext.SaveChanges();
             return caballoAdicionado.Entity;
         }
-        void IRepositorioEquino.DeleteCaballo(int idCaballo)
+        
+        public void DeleteCaballo(int idCaballo)
         {
             var caballoEncontrado = _appContext.Caballos.FirstOrDefault(c => c.Id == idCaballo);
             if (caballoEncontrado == null)
@@ -29,31 +31,26 @@ namespace CuidadoEquino.App.Persistencia
 
         }
 
-        IEnumerable<Caballo> IRepositorioEquino.GetAllCaballos()
+        public IEnumerable<Caballo> GetAllCaballos()
         {
             return _appContext.Caballos;
         }
 
-        Caballo IRepositorioEquino.GetCaballo(int idCaballo)
+        public Caballo GetCaballo(int idCaballo)
         {
-            return _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == idCaballo);
+            return _appContext.Caballos.FirstOrDefault(caballoEncontrado => caballoEncontrado.Id == idCaballo);
         }
 
-        Caballo IRepositorioEquino.UpdateCaballo(Caballo caballo)
+        public Caballo UpdateCaballo(Caballo caballo)
         {
-            var caballoEncontrado = _appContext.Caballos.FirstOrDefault(caballoEncontrado => c.Id == caballo.Id);
+            var caballoEncontrado = _appContext.Caballos.FirstOrDefault(caballoEncontrado => caballoEncontrado.Id == caballo.Id);
             if (caballoEncontrado != null)
             {
                 caballoEncontrado.Nombre = caballo.Nombre;
                 caballoEncontrado.Color = caballo.Color;
                 caballoEncontrado.Especie = caballo.Especie;
-                caballoEncontrado.Raza = caballo.Raza;
-                caballoEncontrado.Propietario = caballo.Propietario;
-                caballoEncontrado.Veterinario = caballo.Veterinario;
-                caballoEncontrado.HistoriaClinica = caballo.HistoriaClinica;
-
+                caballoEncontrado.Raza = caballo.Raza;                
                 _appContext.SaveChanges();
-
             }
             return caballoEncontrado;
         }

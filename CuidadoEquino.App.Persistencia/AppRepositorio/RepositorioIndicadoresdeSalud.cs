@@ -14,56 +14,54 @@ namespace CuidadoEquino.App.Persistencia
         {
             _appContext = appContext;
         }
-        IndicadoresdeSalud IRepositorioIndicadoresdeSalud.AddIndicadoresdeSalud(IndicadoresdeSalud indicadoresdeSalud)
+        
+        public IndicadoresdeSalud AddIndicadoresdeSalud(IndicadoresdeSalud indicadoresdeSalud)
         {
-            var IndicadoresdeSaludAdicionados = _appContext.IndicadoresSdeSalud.add(indicadoresdeSalud);
+            var IndicadoresdeSaludAdicionado = _appContext.IndicadoresdeSalud.Add(indicadoresdeSalud);
             _appContext.SaveChanges();
             return IndicadoresdeSaludAdicionado.Entity;
         }
-        void IRepositorioIndicadoresdeSalud.DeleteIndicadoresdeSalud(int IdIndicadoresdeSalud)
+        
+        public void DeleteIndicadoresdeSalud(int IdIndicadoresdeSalud)
         {
-            var indicadoresdeSaludEncontrado = _appContext.IndicadoresSdeSalud.FirstOrDefault(c => c.Id == IdIndicadoresdeSalud);
-            if (indicadoresdeSaludEncontrado == null)
+            var IndicadoresdeSaludEncontrado = _appContext.IndicadoresdeSalud.FirstOrDefault(c => c.Id == IdIndicadoresdeSalud);
+            if (IndicadoresdeSaludEncontrado == null)
                 return;
-            _appContext.IndicadoresSdeSalud.Remove(indicadoresdeSaludEncontrado);
+            _appContext.IndicadoresdeSalud.Remove(IndicadoresdeSaludEncontrado);
             _appContext.SaveChanges();
 
         }
 
-        IEnumerable<IndicadoresdeSalud> IRepositorioIndicadoresdeSalud.GetAllIndicadoresSdeSalud()
+        public IEnumerable<IndicadoresdeSalud> GetAllIndicadoresdeSalud()
         {
-            return _appContext.IndicadoresSdeSalud;
+            return _appContext.IndicadoresdeSalud;
         }
 
-        IndicadoresdeSalud IRepositorioIndicadoresdeSalud.GetIndicadoresdeSalud(int IdIndicadoresdeSalud)
+        public IndicadoresdeSalud GetIndicadoresdeSalud(int IdIndicadoresdeSalud)
         {
-            return _appContext.IndicadoresSdeSalud.FirstOrDefault(indicadoresdeSaludEncontrado => c.Id == IdIndicadoresdeSalud);
+            return _appContext.IndicadoresdeSalud.FirstOrDefault(indicadoresdeSaludEncontrado => indicadoresdeSaludEncontrado.Id == IdIndicadoresdeSalud);
         }
 
-        IndicadoresdeSalud IRepositorioIndicadoresdeSalud.UpdateIndicadoresdeSalud(IndicadoresdeSalud indicadoresdeSalud)
+        public IndicadoresdeSalud UpdateIndicadoresdeSalud(IndicadoresdeSalud indicadoresdeSalud)
         {
-            var indicadoresdeSaludEncontrado = _appContext.IndicadoresSdeSalud.FirstOrDefault(indicadoresdeSaludEncontrado => c.Id == indicadoresdeSalud.Id);
+            var indicadoresdeSaludEncontrado = _appContext.IndicadoresdeSalud.FirstOrDefault(indicadoresdeSaludEncontrado => indicadoresdeSaludEncontrado.Id == indicadoresdeSalud.Id);
             if (indicadoresdeSaludEncontrado != null)
             {
                 indicadoresdeSaludEncontrado.Id = indicadoresdeSalud.Id;
-                indicadoresdeSalud.IdCaballo = indicadoresdeSalud.IdCaballo;
-                indicadoresdeSalud.IdVeterinario= indicadoresdeSalud.IdVeterinario;
-                indicadoresdeSalud.IdPropietario = indicadoresdeSaludo.IdPropietario;
-                indicadoresdeSalud.Temperatura = indicadoresdeSalud.Temperatura;
-                indicadoresdeSalud.Peso = indicadoresdeSalud.Peso;
-                indicadoresdeSalud.Frecuencia_Respiratoria = indicadoresdeSalud.Frecuencia_Respiratoria;
-                indicadoresdeSalud.Frecuencia_Cardiaca = indicadoresdeSalud.Frecuencia_Cardiaca;
-                indicadoresdeSalud.EstadodeAnimo =indicadoresdeSalud.EstadodeAnimo;
-                indicadoresdeSalud.FechaVisita = indicadoresdeSalud.FechaVisita;
-                indicadoresdeSalud.Recomendaciones = indicadoresdeSalud.Recomendaciones;
-                indicadoresdeSalud.Medicamentos = indicadoresdeSalud.Medicamentos;
-
-
+                indicadoresdeSaludEncontrado.Id_Caballo_Veterinario = indicadoresdeSalud.Id_Caballo_Veterinario;
+                indicadoresdeSaludEncontrado.Temperatura = indicadoresdeSalud.Temperatura;
+                indicadoresdeSaludEncontrado.Peso = indicadoresdeSalud.Peso;
+                indicadoresdeSaludEncontrado.Frecuencia_Respiratoria = indicadoresdeSalud.Frecuencia_Respiratoria;
+                indicadoresdeSaludEncontrado.Frecuencia_Cardiaca = indicadoresdeSalud.Frecuencia_Cardiaca;
+                indicadoresdeSaludEncontrado.EstadodeAnimo =indicadoresdeSalud.EstadodeAnimo;
+                indicadoresdeSaludEncontrado.FechaVisita = indicadoresdeSalud.FechaVisita;
+                indicadoresdeSaludEncontrado.Recomendaciones = indicadoresdeSalud.Recomendaciones;
+                indicadoresdeSaludEncontrado.Medicamentos = indicadoresdeSalud.Medicamentos;
 
                 _appContext.SaveChanges();
 
             }
-            return IndicadoresdeSaludEncontrado;
+            return indicadoresdeSaludEncontrado;
         }
     }
 }

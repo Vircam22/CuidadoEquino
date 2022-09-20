@@ -5,10 +5,10 @@ namespace CuidadoEquino.App.Persistencia
 {
     public interface IRepositorioAdminVeterinaria
     {
-        IEnumerable<AdminVeterinaria> GetAllAdminVeterinarias();
+        IEnumerable<AdminVeterinaria> GetAllAdminVeterinaria();
         AdminVeterinaria AddAdminVeterinaria(AdminVeterinaria adminVeterinaria);
         AdminVeterinaria UpdateAdminVeterinaria(AdminVeterinaria adminVeterinaria);
-        void DeletVeterinaria(int idAdminVeterinaria);
+        void DeleteAdminVeterinaria(int idAdminVeterinaria);
         AdminVeterinaria GetAdminVeterinaria(int idAdminVeterinaria);
     }  
 

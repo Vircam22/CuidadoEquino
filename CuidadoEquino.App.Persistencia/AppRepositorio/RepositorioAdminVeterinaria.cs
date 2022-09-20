@@ -13,44 +13,44 @@ namespace CuidadoEquino.App.Persistencia
         {
             _appContext = appContext;
         }
-        Caballo IRepositorioAdminVeterinaria.AddAdminVeterinaria(AdminVeterinaria adminVeterinaria)
+        
+        public AdminVeterinaria AddAdminVeterinaria(AdminVeterinaria adminVeterinaria)
         {
-            var adminVeterinariaAdicionado = _appContext.AdminVeterinarias.add(adminVeterinaria);
+            var adminVeterinariaAdicionado = _appContext.AdminVeterinarias.Add(adminVeterinaria);
             _appContext.SaveChanges();
             return adminVeterinariaAdicionado.Entity;
         }
-        void IRepositorioAdminVeterinaria.DeleteAdminVeterinaria(int idAdminVeterinaria)
+        public void DeleteAdminVeterinaria(int idAdminVeterinaria)
         {
-            var adminVeterinariaEncontrado = _appContext.AdminVeterinaria.FirstOrDefault(c => c.Id == idAdminVeterinaria);
-            if (caballoEncontrado == null)
+            var adminVeterinariaEncontrado = _appContext.AdminVeterinarias.FirstOrDefault(c => c.Id == idAdminVeterinaria);
+            if (adminVeterinariaEncontrado == null)
                 return;
             _appContext.AdminVeterinarias.Remove(adminVeterinariaEncontrado);
             _appContext.SaveChanges();
 
         }
 
-        IEnumerable<AdminVeterinaria> IRepositorioAdminVeterinaria.GetAllAdminVeterinarias()
+        public IEnumerable<AdminVeterinaria> GetAllAdminVeterinaria()
         {
-            return _appContext.AdminVeterinaria;
+            return _appContext.AdminVeterinarias;
         }
 
-        AdminVeterinaria IRepositorioAdminVeterinaria.GetAdminVeterinaria(int idAdminVeterinaria)
+        public AdminVeterinaria GetAdminVeterinaria(int idAdminVeterinaria)
         {
-            return _appContext.AdminVeterinarias.FirstOrDefault(adminVeterinariaEncontrado => c.Id == idAdminVeterinaria);
+            return _appContext.AdminVeterinarias.FirstOrDefault(adminVeterinariaEncontrado => adminVeterinariaEncontrado.Id == idAdminVeterinaria);
         }
 
-        AAdminVeterinaria IRepositorioAdminVeterinaria.UpdateAdminVeterinaria(AdminVeterinaria adminVeterinaria)
+        public AdminVeterinaria UpdateAdminVeterinaria(AdminVeterinaria adminVeterinaria)
         {
-            var adminVeterinariaEncontrado = _appContext.AdminVeterinarias.FirstOrDefault(adminVeterinariaEncontrado => c.Id == adminVeterinaria.Id);
-            if (caballoEncontrado != null)
+            var adminVeterinariaEncontrado = _appContext.AdminVeterinarias.FirstOrDefault(adminVeterinariaEncontrado => adminVeterinariaEncontrado.Id == adminVeterinaria.Id);
+            if (adminVeterinariaEncontrado != null)
             {
-                adminVterinariaEncontrado.Id = adminVeterinaria.Id;
+                adminVeterinariaEncontrado.Id = adminVeterinaria.Id;
                 adminVeterinariaEncontrado.Nombre = adminVeterinaria.Nombre;
-                
-                _appContext.SaveChanges();
 
+                _appContext.SaveChanges();
             }
-            return adminVterinariaEncontrado;
+            return adminVeterinariaEncontrado;
         }
     }
 }

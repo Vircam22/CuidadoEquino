@@ -13,40 +13,42 @@ namespace CuidadoEquino.App.Persistencia
         {
             _appContext = appContext;
         }
-        Caballo IRepositorioHistoriaClinica.AddHistoriaClinica(HistoriaClinica historiaClinica)
+        
+        public HistoriaClinica AddHistoriaClinica(HistoriaClinica historiaClinica)
         {
-            var historiaClinicaAdicionada = _appContext.HistoriaClinica.add(historiaClinica);
+            var historiaClinicaAdicionada = _appContext.HistoriasClinicas.Add(historiaClinica);
             _appContext.SaveChanges();
-            return historiaClincaAdicionada.Entity;
+            return historiaClinicaAdicionada.Entity;
         }
-        void IRepositorioHistoriaClinica.DeleteHistoriaClinica(int idHistoriaClinica)
+        
+        public void DeleteHistoriaClinica(int idHistoriaClinica)
         {
-            var historiaClinicaEncontrada = _appContext.HistoriasClinicas.FirstOrDefault(c => c.Id == idCaballo);
-            if (caballoEncontrado == null)
+            var historiaClinicaEncontrada = _appContext.HistoriasClinicas.FirstOrDefault(c => c.Id == idHistoriaClinica);
+            if (historiaClinicaEncontrada == null)
                 return;
             _appContext.HistoriasClinicas.Remove(historiaClinicaEncontrada);
             _appContext.SaveChanges();
 
         }
 
-        IEnumerable<HistoriaClinica> IRepositorioHistoriaClinica.GetAllHistoriasClinicas()
+        public IEnumerable<HistoriaClinica> GetAllHistoriasClinicas()
         {
-            return _appContext.HistoriaClinica;
+            return _appContext.HistoriasClinicas;
         }
 
-        Caballo IRepositorioHistoriaClinica.GetHistoriaClinica(int idHistoriaClinica)
+        public HistoriaClinica GetHistoriaClinica(int idHistoriaClinica)
         {
-            return _appContext.HistoriasClinicas.FirstOrDefault(historiaClinicaEncontrado => c.Id == idHistoriaClinica);
+            return _appContext.HistoriasClinicas.FirstOrDefault(historiaClinicaEncontrado => historiaClinicaEncontrado.Id == idHistoriaClinica);
         }
 
-        Caballo IRepositorioHistoriaClinica.UpdateHistoriaClinica(HistoriaClinica historiaClinica)
+        public HistoriaClinica UpdateHistoriaClinica(HistoriaClinica historiaClinica)
         {
-            var historiaClinicaEncontrada = _appContext.HistoriasClinicas.FirstOrDefault(historiaClinicaEncontrada => c.Id == historiaClinica.Id);
+            var historiaClinicaEncontrada = _appContext.HistoriasClinicas.FirstOrDefault(historiaClinicaEncontrada => historiaClinicaEncontrada.Id == historiaClinica.Id);
             if (historiaClinicaEncontrada != null)
             {
-                historiaClinicaEncontrada.IdCaballo = historiaClinica.IdCaballo;
+                historiaClinicaEncontrada.Id_Caballo = historiaClinica.Id_Caballo;
                 historiaClinicaEncontrada.IdIndicadoresdeSalud = historiaClinica.IdIndicadoresdeSalud;
-                historiaClinicaEncontrado.FechaVisita = historiaClinica.FechaVisita;
+                historiaClinicaEncontrada.FechaApertura = historiaClinica.FechaApertura;
                 
                 _appContext.SaveChanges();
 

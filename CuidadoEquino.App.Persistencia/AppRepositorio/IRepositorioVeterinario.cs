@@ -8,7 +8,7 @@ namespace CuidadoEquino.App.Persistencia
         IEnumerable<Veterinario> GetAllVeterinarios();
         Veterinario AddVeterinario(Veterinario veterinario);
         Veterinario UpdateVeterinario(Veterinario veterinario);
-        void DeletVeterinario(int idVeterinario);
-        Propietario GetVeterinario(int idVeterinario);
+        void DeleteVeterinario(int idVeterinario);
+        Veterinario GetVeterinario(int idVeterinario);
     }
 }
