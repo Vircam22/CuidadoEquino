@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 $(document).ready(function(){
-
+    var searchToggle = true;
     const toggle = $("#header-toggle"),
     nav = $("#nav-bar"),
     bodypd = $("#body-pd"),
@@ -22,6 +22,20 @@ $(document).ready(function(){
         // add padding to header
         headerpd.toggleClass('body-pd');
         // headerpd.classList.toggle('body-pd');
+    });
+
+    $("#btnConsultar").on("click", function() {
+        if(searchToggle) {
+          $("#btnConsultar").html("<i class='bi bi-x-circle-fill'></i>");
+          searchToggle = false;
+        } else {
+            $("#btnConsultar").html("<i class='bi bi-search'></i>");
+            searchToggle = true;
+        }
+        $("#btnConsultar").toggleClass("btn-danger");
+        $("#btnConsultar").toggleClass("btn-success");
+        $("#formBuscarCaballo").toggleClass("d-none");
+        $("#formBuscarCaballo").toggleClass("d-inline");
     });
     
     /*===== LINK ACTIVE =====*/
