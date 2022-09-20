@@ -3,7 +3,7 @@ using CuidadoEquino.App.Dominio;
 
 namespace CuidadoEquino.App.Persistencia
 {
-    public interface IRepositorioEquino
+    public interface IRepositorioCaballo
     {
         IEnumerable<Caballo> GetAllCaballos();
         Caballo AddCaballo(Caballo caballo);

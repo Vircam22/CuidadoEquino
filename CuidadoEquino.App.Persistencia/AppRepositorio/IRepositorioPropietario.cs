@@ -8,7 +8,7 @@ namespace CuidadoEquino.App.Persistencia
         IEnumerable<Propietario> GetAllPropietarios();
         Propietario AddPropietario(Propietario propietario);
         Propietario UpdatePropietario(Propietario propietario);
-        void DeletPropietario(int idPropietario);
+        void DeletePropietario(int idPropietario);
         Propietario GetPropietario(int idPropietario);
     }
 }

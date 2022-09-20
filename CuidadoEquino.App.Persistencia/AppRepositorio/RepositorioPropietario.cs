@@ -13,13 +13,15 @@ namespace CuidadoEquino.App.Persistencia
         {
             _appContext = appContext;
         }
-        Caballo IRepositorioPropietario.AddPropietario(Propietario propietario)
+        
+        public Propietario AddPropietario(Propietario propietario)
         {
-            var propietarioAdicionado = _appContext.Propietarios.add(propietario);
+            var propietarioAdicionado = _appContext.Propietarios.Add(propietario);
             _appContext.SaveChanges();
             return propietarioAdicionado.Entity;
         }
-        void IRepositorioPropietario.DeletPropietario(int idPropietario)
+        
+        public void DeletePropietario(int idPropietario)
         {
             var propietarioEncontrado = _appContext.Propietarios.FirstOrDefault(c => c.Id == idPropietario);
             if (propietarioEncontrado == null)
@@ -29,31 +31,29 @@ namespace CuidadoEquino.App.Persistencia
 
         }
 
-        IEnumerable<Propietario> IRepositorioPropietario.GetAllPropietarios()
+        public IEnumerable<Propietario> GetAllPropietarios()
         {
             return _appContext.Propietarios;
         }
 
-        Caballo IRepositorioPropietario.GetPropietario(int idPropietario)
+        public Propietario GetPropietario(int idPropietario)
         {
-            return _appContext.Caballos.FirstOrDefault(propietarioEncontrado => c.Id == idPropietario);
+            return _appContext.Propietarios.FirstOrDefault(propietarioEncontrado => propietarioEncontrado.Id == idPropietario);
         }
 
-        Propietario IRepositorioPropietario.UpdatePropietario(Propietario propietario)
+        public Propietario UpdatePropietario(Propietario propietario)
         {
-            var propietarioEncontrado = _appContext.Propietarios.FirstOrDefault(propietarioEncontrado => c.Id == propietario.Id);
-            if (caballoEncontrado != null)
+            var propietarioEncontrado = _appContext.Propietarios.FirstOrDefault(propietarioEncontrado => propietarioEncontrado.Id == propietario.Id);
+            if (propietarioEncontrado != null)
             {
-                pacienteEncontrado.Id = propietario.Id;
+                propietarioEncontrado.Id = propietario.Id;
                 propietarioEncontrado.Nombre = propietario.Nombre;
-                proietarioEncontrado.Apellidos = propietario.Apellidos;
-                propietarioEncontrado.Dirección = propietario.Dirección;
-                propietarioEncontrado.Teléfono = propietario.Teléfono;
-                propietarioEncontrado.Correo = propietario.Correo;
+                propietarioEncontrado.Apellidos = propietario.Apellidos;
+                propietarioEncontrado.Direccion = propietario.Direccion;
+                propietarioEncontrado.Telefono = propietario.Telefono;
+                propietarioEncontrado.Email = propietario.Email;
                 
-
                 _appContext.SaveChanges();
-
             }
             return propietarioEncontrado;
         }

@@ -13,13 +13,15 @@ namespace CuidadoEquino.App.Persistencia
         {
             _appContext = appContext;
         }
-        Caballo IRepositorioVeterinario.AddPropietario(Veterinario veterinario)
+        
+        public Veterinario AddVeterinario(Veterinario veterinario)
         {
-            var veterinarioAdicionado = _appContext.Veterinarios.add(veterinario);
+            var veterinarioAdicionado = _appContext.Veterinarios.Add(veterinario);
             _appContext.SaveChanges();
             return veterinarioAdicionado.Entity;
         }
-        void IRepositorioVeterinario.DeletVeterinario(int idVeterinario)
+        
+        public void DeleteVeterinario(int idVeterinario)
         {
             var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(c => c.Id == idVeterinario);
             if (veterinarioEncontrado == null)
@@ -29,28 +31,27 @@ namespace CuidadoEquino.App.Persistencia
 
         }
 
-        IEnumerable<Propietario> IRepositorioVeterinario.GetAllVeterinarios()
+        public IEnumerable<Veterinario> GetAllVeterinarios()
         {
             return _appContext.Veterinarios;
         }
 
-        Veterinario IRepositorioVeterinario.GetVeterinario(int idVeterinario)
+        public Veterinario GetVeterinario(int idVeterinario)
         {
-            return _appContext.Veterinarios.FirstOrDefault(veterinarioEncontrado => c.Id == idVeterinario);
+            return _appContext.Veterinarios.FirstOrDefault(veterinarioEncontrado => veterinarioEncontrado.Id == idVeterinario);
         }
 
-        Propietario IRepositorioVeterinario.UpdateVeterinario(Veterinario veterinario)
+        public Veterinario UpdateVeterinario(Veterinario veterinario)
         {
-            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(veterinarioEncontrado => c.Id == veterinario.Id);
+            var veterinarioEncontrado = _appContext.Veterinarios.FirstOrDefault(veterinarioEncontrado => veterinarioEncontrado.Id == veterinario.Id);
             if (veterinarioEncontrado != null)
             {
-                veterianrioEncontrado.Id = veterinario.Id;
+                veterinarioEncontrado.Id = veterinario.Id;
                 veterinarioEncontrado.Nombre = veterinario.Nombre;
                 veterinarioEncontrado.Apellidos = veterinario.Apellidos;
-                veterinarioEncontrado.Dirección = veterinario.Dirección;
-                veterinarioEncontrado.Teléfono = veterinario.Teléfono;
+                veterinarioEncontrado.Direccion = veterinario.Direccion;
+                veterinarioEncontrado.Telefono = veterinario.Telefono;
                 veterinarioEncontrado.Tarjeta_Profesional = veterinario.Tarjeta_Profesional;
-
 
                 _appContext.SaveChanges();
 

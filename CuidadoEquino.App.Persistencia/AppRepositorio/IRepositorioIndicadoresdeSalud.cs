@@ -5,7 +5,7 @@ namespace CuidadoEquino.App.Persistencia
 {
     public interface IRepositorioIndicadoresdeSalud
     {
-        IEnumerable<IndicadoresdeSalud> GetAllIndicadoresSdeSalud();
+        IEnumerable<IndicadoresdeSalud> GetAllIndicadoresdeSalud();
         IndicadoresdeSalud AddIndicadoresdeSalud (IndicadoresdeSalud indicadoresdeSalud);
         IndicadoresdeSalud UpdateIndicadoresdeSalud(IndicadoresdeSalud indicadoresdeSalud);
         void DeleteIndicadoresdeSalud(int IdIndicadoresdeSalud);
